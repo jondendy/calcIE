@@ -1,4 +1,4 @@
-
+streamlit_code = '''
 import streamlit as st
 
 # Title of the app
@@ -32,3 +32,7 @@ try:
     st.success(f'Result: {result}')
 except Exception as e:
     st.error(f'Error: {str(e)}')
+'''
+
+with open('/root/dynamic_calculator_with_operators.py', 'w') as f:
+    f.write(streamlit_code)
