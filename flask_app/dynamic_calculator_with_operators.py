@@ -17,9 +17,8 @@ for i in range(num_vars):
         operators.append(operator)
 
 # Perform calculation
-try:
-    result = inputs[0]
-    for i in range(1, num_vars):
+for i in range(1, num_vars):
+    try:
         if operators[i-1] == '+':
             result += inputs[i]
         elif operators[i-1] == '-':
@@ -28,9 +27,25 @@ try:
             result *= inputs[i]
         elif operators[i-1] == '/':
             result /= inputs[i]
-    st.success(f'Result: {result}')
-except Exception as e:
-    st.error(f'Error: {str(e)}')
+    except ZeroDivisionError:
+        st.error("Error: Division by zero")
+    except TypeError:
+        st.error("Error: Invalid input type")
+
+st.success(f'Result: {result}')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
