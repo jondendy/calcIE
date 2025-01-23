@@ -15,7 +15,7 @@ for i in range(num_vars):
     if i < num_vars - 1:
         operator = st.selectbox(f'Operator {i+1}', ('+', '-', '*', '/'))
         operators.append(operator)
-
+result = 0
 # Perform calculation
 for i in range(1, num_vars):
     try:
