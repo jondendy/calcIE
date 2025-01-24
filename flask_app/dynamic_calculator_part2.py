@@ -1,1 +1,52 @@
-import streamlit as st\nfrom PIL import Image, ImageDraw\n\n# Function to create a stick family image\ndef create_stick_family():\n    img = Image.new('RGB', (200, 200), color='white')\n    d = ImageDraw.Draw(img)\n    # Draw stick figures\n    d.line((50, 100, 50, 150), fill='black', width=3)  # Body\n    d.ellipse((45, 80, 55, 90), fill='black')  # Head\n    d.line((50, 120, 30, 140), fill='black', width=3)  # Left arm\n    d.line((50, 120, 70, 140), fill='black', width=3)  # Right arm\n    d.line((50, 150, 40, 180), fill='black', width=3)  # Left leg\n    d.line((50, 150, 60, 180), fill='black', width=3)  # Right leg\n    return img\n\n# Function to create home type images\ndef create_home_type(home_type):\n    img = Image.new('RGB', (200, 200), color='white')\n    d = ImageDraw.Draw(img)\n    if home_type == 'Detached':\n        d.rectangle((50, 100, 150, 150), outline='black', width=3)\n        d.polygon([(50, 100), (100, 50), (150, 100)], outline='black', fill='grey')\n    elif home_type == 'Bungalow':\n        d.rectangle((50, 120, 150, 150), outline='black', width=3)\n        d.polygon([(50, 120), (100, 90), (150, 120)], outline='black', fill='grey')\n    elif home_type == 'Semi-detached':\n        d.rectangle((50, 100, 100, 150), outline='black', width=3)\n        d.rectangle((100, 100, 150, 150), outline='black', width=3)\n        d.polygon([(50, 100), (75, 50), (100, 100)], outline='black', fill='grey')\n        d.polygon([(100, 100), (125, 50), (150, 100)], outline='black', fill='grey')\n    elif home_type == 'Flat':\n        d.rectangle((50, 100, 150, 150), outline='black', width=3)\n        d.line((50, 120, 150, 120), fill='black', width=3)\n        d.line((50, 140, 150, 140), fill='black', width=3)\n    return img\n\n# Streamlit app\ndef main():\n    st.title('Dynamic Calculator with Graphics')\n    st.header('Stick Family')\n    stick_family_img = create_stick_family()\n    st.image(stick_family_img, caption='Stick Family')\n\n    st.header('Home Types')\n    home_types = ['Detached', 'Bungalow', 'Semi-detached', 'Flat']\n    for home_type in home_types:\n        st.subheader(home_type)\n        home_img = create_home_type(home_type)\n        st.image(home_img, caption=home_type)\n\nif __name__ == "__main__":\n    main()
+import streamlit as st
+from PIL import Image, ImageDraw
+# Function to create a stick family image
+def create_stick_family():
+    img = Image.new('RGB', (200, 200), color='white')
+    d = ImageDraw.Draw(img)
+#     Draw stick figures
+    d.line((50, 100, 50, 150), fill='black', width=3)  # Body
+    d.ellipse((45, 80, 55, 90), fill='black')  # Head
+    d.line((50, 120, 30, 140), fill='black', width=3)  # Left arm
+    d.line((50, 120, 70, 140), fill='black', width=3)  # Right arm
+    d.line((50, 150, 40, 180), fill='black', width=3)  # Left leg
+    d.line((50, 150, 60, 180), fill='black', width=3)  # Right leg
+    return img
+ 
+Function to create home type images
+def create_home_type(home_type):
+    img = Image.new('RGB', (200, 200), color='white')
+    d = ImageDraw.Draw(img)
+    if home_type == 'Detached':
+        d.rectangle((50, 100, 150, 150), outline='black', width=3)
+        d.polygon([(50, 100), (100, 50), (150, 100)], outline='black', fill='grey')
+    elif home_type == 'Bungalow':
+        d.rectangle((50, 120, 150, 150), outline='black', width=3)
+        d.polygon([(50, 120), (100, 90), (150, 120)], outline='black', fill='grey')
+    elif home_type == 'Semi-detached':
+        d.rectangle((50, 100, 100, 150), outline='black', width=3)
+        d.rectangle((100, 100, 150, 150), outline='black', width=3)
+        d.polygon([(50, 100), (75, 50), (100, 100)], outline='black', fill='grey')
+        d.polygon([(100, 100), (125, 50), (150, 100)], outline='black', fill='grey')
+    elif home_type == 'Flat':
+        d.rectangle((50, 100, 150, 150), outline='black', width=3)
+        d.line((50, 120, 150, 120), fill='black', width=3)
+        d.line((50, 140, 150, 140), fill='black', width=3)
+    return img
+    
+# Streamlit app
+def main():
+    st.title('Dynamic Calculator with Graphics')
+    st.header('Stick Family')
+    stick_family_img = create_stick_family()
+    st.image(stick_family_img, caption='Stick Family')
+    
+    st.header('Home Types')
+    home_types = ['Detached', 'Bungalow', 'Semi-detached', 'Flat']
+    for home_type in home_types:
+        st.subheader(home_type)
+        home_img = create_home_type(home_type)
+        st.image(home_img, caption=home_type)
+                
+        if __name__ == "__main__":
+            main()
