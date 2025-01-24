@@ -70,6 +70,6 @@ except TypeError:
         st.error("Error: Invalid input type")
 
 # Information text box
-st.text_area('Calculator Information', 'This calculator helps you estimate energy consumption...\n \n Some calculations to try are...')
+st.text_area('Calculator Information', 'This energy calculator helps you estimate energy consumption...\n \n Some calculations to try are...')
 
 
