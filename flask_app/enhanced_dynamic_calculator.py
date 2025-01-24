@@ -47,5 +47,7 @@ try:
     result *= home_factor[home_type] * num_bedrooms
 
     st.success(f'Result: {result}')
-except ImportError as e:
-    st.error(f'Error: {str(e)}')
+except ZeroDivisionError as e:
+    st.error(f'Error: Division by zero {str(e)}')
+except TypeError as e:
+    st.error(f'Error: Invalid input type {str(e)}')
