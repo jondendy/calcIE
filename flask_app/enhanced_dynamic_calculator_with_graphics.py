@@ -83,7 +83,7 @@ except Exception as e:
 st.text_area('Calculator Information', 'This calculator helps you estimate energy consumption...')
 
 # Load and apply CSS for thought bubble
-with open('thought_bubble.css', 'r') as f:
+with open('./thought_bubble.css', 'r') as f:
     thought_bubble_css = f.read()
 
 st.markdown(thought_bubble_css, unsafe_allow_html=True)
