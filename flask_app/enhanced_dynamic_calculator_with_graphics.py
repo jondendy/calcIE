@@ -1,4 +1,4 @@
-''' streamlit_code = '''
+''' module for streamlit_code '''
 import streamlit as st
 from PIL import Image, ImageDraw
 
@@ -71,7 +71,5 @@ except TypeError:
 
 # Information text box
 st.text_area('Calculator Information', 'This calculator helps you estimate energy consumption...\n \n Some calculations to try are...')
-'''
 
-with open('enhanced_dynamic_calculator_with_graphics.py', 'w') as f:
-    f.write(streamlit_code)
+
