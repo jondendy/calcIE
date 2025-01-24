@@ -1,4 +1,4 @@
-
+""" module importing streamlit """
 import streamlit as st
 
 # Title of the app
@@ -47,5 +47,5 @@ try:
     result *= home_factor[home_type] * num_bedrooms
 
     st.success(f'Result: {result}')
-except Exception as e:
+except ImportError as e:
     st.error(f'Error: {str(e)}')
